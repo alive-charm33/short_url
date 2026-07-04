@@ -6,6 +6,8 @@ const app=express();
 const PORT=8001;
 connectToMongoDB('mongodb://localhost:27017/short_url').then(()=>
 console.log('mongoDB connected'))
+//templeting engine ejs for server side rendering
+app.set('view engine','ejs');
 app.use(express.json());
 app.post("/test", (req, res) => {
     console.log("POST /test");
