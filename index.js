@@ -4,6 +4,9 @@ const path = require("path");
 const { connectToMongoDB } = require("./connect");
 const urlRoute = require("./routes/url");
 const staticRoute = require("./routes/staticRouter");
+
+const userRoute=require('./routes/user')
+
 const URL = require("./models/url");
 
 const app = express();
@@ -25,6 +28,7 @@ app.use(express.urlencoded({ extended: false }));
 // Routes
 app.use("/", staticRoute);
 app.use("/url", urlRoute);
+app.use("/user",userRoute);
 
 // Redirect Route
 app.get("/:shortId", async (req, res) => {

@@ -1,6 +1,8 @@
-const express=require("express");
-const {handleUserSignup}=require("../controllers/user");
-const router=express.Router();
-router.post('/',)
+const express = require("express");
+const { handleUserSignup } = require("../controllers/user");
 
-module.exports=router;
+const router = express.Router();
+
+router.post("/signup", handleUserSignup);
+
+module.exports = router;
