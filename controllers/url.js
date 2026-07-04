@@ -33,7 +33,7 @@ async function handleGenerateNewShortURL(req, res) {
         return res.status(500).json({ error: "Internal server error" });
     }
 }
-
+//logic of how many times clicked and when clicked
 async function handleGetAnalytics(req, res) {
     const shortId = req.params.shortId;
     const result=await URL.findOne({shortId});
